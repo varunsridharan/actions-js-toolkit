@@ -2,15 +2,15 @@ const nodeexec = require( '../node-exec' );
 const gh_core  = require( '@actions/core' );
 const log      = require( '../logger/index' );
 
-module.exports = async( GIT_PATH, GIT_USER, GIT_EMAIL, show_log = true ) => {
+module.exports = async( work_dir, user, email, show_log = true ) => {
 	let status = true;
-	let cmd    = `git config --local user.name "${GIT_USER}" && git config --local user.email "${GIT_EMAIL}"`;
-	await nodeexec( cmd, GIT_PATH ).then( () => {
+	let cmd    = `git config --local user.name "${user}" && git config --local user.email "${email}"`;
+	await nodeexec( cmd, work_dir ).then( () => {
 		if( show_log ) {
 			log( '' );
 			log( '🗃 Git Config' );
-			log( `	> Name  : ${GIT_USER}` );
-			log( `	> Email : ${GIT_EMAIL}` );
+			log( `	> Name  : ${user}` );
+			log( `	> Email : ${email}` );
 			log( '' );
 		}
 	} ).catch( ( error ) => {

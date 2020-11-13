@@ -2,7 +2,7 @@ const nodeexec = require( '../node-exec' );
 const gh_core  = require( '@actions/core' );
 const log      = require( '../logger/index' );
 
-module.exports = async( git_path, location, force_or_args = false, show_log = false ) => {
+module.exports = async( work_dir, file, force_or_args = false, show_log = false ) => {
 	let status = true;
 	let cmd    = 'git add';
 	if( true === force_or_args ) {
@@ -11,7 +11,7 @@ module.exports = async( git_path, location, force_or_args = false, show_log = fa
 		cmd += ` ${force_or_args} `;
 	}
 
-	await nodeexec( cmd, git_path ).then( () => {
+	await nodeexec( `${cmd} ${file}`, work_dir ).then( () => {
 		if( show_log ) {
 			log.success( 'File Added' );
 		}
