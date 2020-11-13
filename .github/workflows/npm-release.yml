@@ -57,7 +57,7 @@ jobs:
         name: "🚀🚀  Creating Github Tag & Release"
         uses: webclipper/create-release@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PUBLIC_REPO }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{steps.npmpublisher.outputs.version}}
           release_name: ${{steps.npmpublisher.outputs.version}}
