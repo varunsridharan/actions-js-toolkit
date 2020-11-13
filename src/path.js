@@ -1,4 +1,5 @@
 const path = require( 'path' );
+const fs   = require( 'fs' );
 
 /**
  * Searches For Chars "./", "/../"," ", "../" and fixes for absolute path
@@ -25,5 +26,6 @@ module.exports = {
 	basename: path.basename,
 	dirname: path.dirname,
 	isDir: async( $path ) => await fs.lstatSync( $path ).isDirectory(),
-	isFile: async( $path ) => await fs.lstatSync( $path ).isFile()
+	isFile: async( $path ) => await fs.lstatSync( $path ).isFile(),
+	exists: ( $path ) => fs.existsSync( $path ),
 };
