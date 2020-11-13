@@ -1,6 +1,6 @@
 const gh_core = require( '@actions/core' );
-const log     = ( log ) => gh_core.info( `${log}` );
 const style   = require( 'ansi-styles' );
+const log     = ( log ) => gh_core.info( `${log}` );
 
 log.success = ( log, before = '' ) => gh_core.info( `${before}✔  ${log}` );
 log.warning = ( log, before = '' ) => gh_core.warning( `${before}⚠️ ${log}` );

@@ -1,8 +1,8 @@
-module.exports = {
-	log: require( './logger/index' ),
-	exec: require( './node-exec' ),
-	git: require( './git/index' ),
-	path: require( './path/index' ),
-	asyncForEach: require( './asyncForEach/index' ),
-	input: require( './input/index' ),
-};
+const log          = require( './logger/index' );
+const exec         = require( './node-exec' );
+const git          = require( './git/index' );
+const path         = require( './path/index' );
+const asyncForEach = require( './asyncForEach/index' );
+const input        = require( './input/index' );
+
+module.exports = { log, exec, git, path, asyncForEach, input };

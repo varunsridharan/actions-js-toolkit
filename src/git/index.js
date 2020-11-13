@@ -1,4 +1,5 @@
-module.exports = {
-	identity: require( './identity' ),
-	add: require( './add' ),
-};
+const identity = require( './identity' );
+const add      = require( './add' );
+
+module.exports = { identity, add };
+
