@@ -4,6 +4,8 @@
 ~ Predefined Functions For Github Actions NodeJS ~
 </p>
 
+---
+
 <!-- START common-footer.mustache -->
 
 <!-- END common-footer.mustache -->
