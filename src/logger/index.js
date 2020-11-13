@@ -2,11 +2,11 @@ const gh_core = require( '@actions/core' );
 const log     = ( log ) => gh_core.info( `${log}` );
 const style   = require( 'ansi-styles' );
 
-log.error   = require( './error' );
-log.success = require( './success' );
-log.warning = require( './warning' );
-log.warn    = require( './warn' );
-log.err     = require( './err' );
+log.success = ( log, before = '' ) => gh_core.info( `${before}✔  ${log}` );
+log.warning = ( log, before = '' ) => gh_core.warning( `${before}⚠️ ${log}` );
+log.error   = ( log, before = '' ) => gh_core.error( `${before}🛑️  ${log}` );
+log.warn    = ( log, before = '' ) => gh_core.info( `${before}⚠️ ${log}` );
+log.err     = ( log, before = '' ) => gh_core.info( `${before}🛑️  ${log}` );
 
 /**
  * Colored Logs
