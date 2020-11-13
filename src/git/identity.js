@@ -14,8 +14,10 @@ module.exports = async( GIT_PATH, GIT_USER, GIT_EMAIL, LOG = true ) => {
 			log( '' );
 		}
 	} ).catch( ( error ) => {
-		log.error( 'Unable To Set GIT Identity' );
-		gh_core.error( error );
+		if( LOG ) {
+			log.error( 'Unable To Set GIT Identity' );
+			gh_core.error( error );
+		}
 		status = false;
 	} );
 	return status;
