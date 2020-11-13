@@ -1,6 +1,6 @@
 {
   "name": "actions-js-toolkit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "funding": "https://sva.onl/sponsor",
   "description": "~ Predefined Functions For Github Actions NodeJS ~",
   "main": "src/index.js",
