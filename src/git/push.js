@@ -1,23 +1,19 @@
-const nodeexec = require( '../node-exec' );
-const log      = require( '../logger/index' );
+const exec     = require( '@actions/exec' );
 
-module.exports = async( work_dir, repository_url, args = false, show_log = true ) => {
-	let status = true;
+module.exports = async( work_dir, repository_url, args = false ) => {
+	let status = { success: true, data: '' };
 	let cmd    = `git push "${repository_url}" `;
 
 	if( false !== args ) {
 		cmd += ` ${args} `;
 	}
 
-	await nodeexec( `${cmd}`, work_dir ).then( ( response ) => {
-		if( show_log ) {
-			log.success( `${response}` );
-		}
+	await exec.exec( `${cmd}`, [], { cwd: work_dir } ).then( ( response ) => {
+		status.success = true;
+		status.data    = response;
 	} ).catch( ( error ) => {
-		if( show_log ) {
-			log.error( `${error}` );
-		}
-		status = false;
+		status.success = false;
+		status.data    = error;
 	} );
 	return status;
 };
