@@ -2,7 +2,7 @@ const gh_core = require( '@actions/core' );
 const style   = require( 'ansi-styles' );
 const log     = ( log ) => gh_core.info( `${log}` );
 
-log.success = ( log, before = '' ) => gh_core.info( `${before}✔️ ${log}` );
+log.success = ( log, before = '' ) => gh_core.info( `${before}✔️ ️ ${log}` );
 log.warning = ( log, before = '' ) => gh_core.warning( `${before}⚠️ ${log}` );
 log.error   = ( log, before = '' ) => gh_core.error( `${before}🛑️  ${log}` );
 log.warn    = ( log, before = '' ) => gh_core.info( `${before}⚠️ ${log}` );
