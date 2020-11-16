@@ -13,6 +13,7 @@
     "@actions/exec": "^1.0.4",
     "@actions/glob": "^0.1.0",
     "@actions/io": "^1.0.2",
+    "locutus": "^2.0.14",
     "ansi-styles": "^4.3.0"
   },
   "repository": {

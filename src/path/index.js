@@ -1,12 +1,12 @@
-const path = require( 'path' );
-const fs   = require( 'fs' );
-
+const path              = require( 'path' );
+const fs                = require( 'fs' );
+const rtrim             = require( 'locutus/php/strings/rtrim' );
 /**
  * Searches For Chars "./", "/../"," ", "../" and fixes for absolute path
  * @param $path
  * @return {string}
  */
-const fix = ( $path ) => {
+const fix               = ( $path ) => {
 	$path       = $path.trim();
 	const regex = /^(\s|\/..\/|(?:\/|).\/|\/)(.+)/;
 	let m       = regex.exec( $path );
@@ -20,9 +20,13 @@ const fix = ( $path ) => {
 	}
 	return $path;
 };
+const untrailingslashit = ( $string ) => rtrim( $string, '/\\' );
+const trailingslashit   = ( $string ) => untrailingslashit( $string ) + '/\\';
 
 module.exports = {
 	fix,
+	trailingslashit,
+	untrailingslashit,
 	basename: path.basename,
 	dirname: path.dirname,
 	isDir: async( $path ) => await fs.lstatSync( $path ).isDirectory(),
