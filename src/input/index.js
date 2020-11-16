@@ -10,7 +10,6 @@ const env_validate = ( key, message = false ) => {
 const set_env      = ( key, value, silent = false ) => {
 	gh_core.exportVariable( key, value );
 	if( !silent ) {
-		//"✔️ ENV  : ${key}  =>  ${value}"
 		log.success( `ENV : ${key}	=>	${value}` );
 	}
 };
@@ -18,5 +17,6 @@ const set_env      = ( key, value, silent = false ) => {
 module.exports = {
 	tobool: ( value ) => ( value === 'true' ),
 	env: gh_env,
+	set_env: set_env,
 	env_validate: env_validate,
 };
