@@ -1,6 +1,6 @@
 const path              = require( 'path' );
 const fs                = require( 'fs' );
-const rtrim             = require( 'locutus/php/strings/rtrim' );
+const rtrim             = require( 'rtrim' );
 /**
  * Searches For Chars "./", "/../"," ", "../" and fixes for absolute path
  * @param $path
