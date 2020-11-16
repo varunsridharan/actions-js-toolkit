@@ -24,9 +24,9 @@ const untrailingslashit = ( $string ) => rtrim( $string, '/\\' );
 const trailingslashit   = ( $string ) => untrailingslashit( $string ) + '/\\';
 
 module.exports = {
-	fix,
-	trailingslashit,
-	untrailingslashit,
+	fix: fix,
+	trailingslashit: trailingslashit,
+	untrailingslashit: untrailingslashit,
 	basename: path.basename,
 	dirname: path.dirname,
 	isDir: async( $path ) => await fs.lstatSync( $path ).isDirectory(),

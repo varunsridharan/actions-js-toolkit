@@ -9,5 +9,5 @@ const env_validate = ( key, message = false ) => {
 module.exports     = {
 	tobool: ( value ) => ( value === 'true' ),
 	env: gh_env,
-	env_validate,
+	env_validate: env_validate,
 };

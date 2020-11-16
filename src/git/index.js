@@ -7,5 +7,14 @@ const push           = require( './push' );
 const currentBranch  = require( './current-branch' );
 const getAllBranches = require( './getAllBranchs' );
 
-module.exports = { identity, add, stats, hasChange, commit, push, currentBranch, getAllBranches };
+module.exports = {
+	identity: identity,
+	add: add,
+	stats: stats,
+	hasChange: hasChange,
+	commit: commit,
+	push: push,
+	currentBranch: currentBranch,
+	getAllBranche: getAllBranches
+};
 
